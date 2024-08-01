@@ -1,0 +1,51 @@
+    #include <iostream>
+    #include<algorithm>
+    #include <vector>
+    #include <stack>
+    using namespace std;
+    #define el cout << endl
+    #define ll long long
+    #define ull unsigned long long
+    #define yes cout << "YES"
+    #define no cout << "NO"
+    #define print cout <<
+    int ar[200005],ar2[200005];
+    #define LOL ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+    int main()
+    {
+        LOL
+        int t = 1;
+       // cin >> t;
+        while (t--)
+        {
+          stack<char>st;
+            string c;
+            cin>>c;
+            for (int i = 0; i < c.size(); i++)
+            {
+                if(c[i]=='('){
+                st.push(c[i]);
+                }
+                else{
+                    if(!st.empty()){
+                    st.pop();
+                    }else{
+                        cout<<"No";
+                        return 0;
+                    }
+                }
+            }
+            if(st.empty()){
+                cout<<"Yes";
+            }else{
+                cout<<"No";
+            }
+            
+
+         
+
+           
+            
+
+        }
+    }
