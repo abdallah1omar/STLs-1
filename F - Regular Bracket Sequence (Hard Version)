@@ -1,0 +1,121 @@
+#include <bits/stdc++.h>
+#define ONE_PEICE_3MK ios_base::sync_with_stdio(0),cin.tie(0),cout.tie(0);
+#define el cout << '\n'
+#define ll long long
+#define ull unsigned long long
+#define yes cout << "YES"
+#define no cout << "NO"
+#define print cout <<
+#define O2AF_3NDK_YA_MAGDY return 0;
+#define test while(t--)
+using namespace std;
+ll ar[200001];
+ll ar2[500002];
+ll pre[200001];
+ll freq[500002];
+int main()
+{
+    ONE_PEICE_3MK
+    ll t=1;
+   // cin>>t;
+    test{
+         string a;
+        cin>>a;
+        stack<char> st;
+        const ull sz =a.size();
+        for (ll i=0;i<sz;i++)
+        {
+            if(a[i]=='('||a[i]=='<'||a[i]=='{'||a[i]=='[')
+            {
+                st.push(a[i]);
+            }else
+            {
+                if(a[i]==')')
+                {
+                    if(st.empty())
+                    {
+                        cout<<"No";
+                        O2AF_3NDK_YA_MAGDY;
+                    }
+                    else
+                    {
+
+                        if(st.top()=='(')
+                        {
+                                st.pop();
+                        }else
+                        {
+                            cout<<"No";
+                            O2AF_3NDK_YA_MAGDY;
+                        }
+                    }
+                }
+                if(a[i]=='>')
+                {
+                    if(st.empty())
+                    {
+                        cout<<"No";
+                        O2AF_3NDK_YA_MAGDY;
+                    }else
+                    {
+
+                        if(st.top()=='<')
+                            {
+                                st.pop();
+                            }
+                        else
+                            {
+                                cout<<"No";
+                            O2AF_3NDK_YA_MAGDY;
+                            }
+                    }
+                }
+                if(a[i]=='}')
+                {
+                    if(st.empty())
+                    {
+                        cout<<"No";
+                        O2AF_3NDK_YA_MAGDY;
+                    }else
+                    {
+
+                        if(st.top()=='{')
+                        {
+                                st.pop();
+                        }else
+                        {
+                            cout<<"No";
+                            O2AF_3NDK_YA_MAGDY;
+                        }
+                    }
+                }
+                if(a[i]==']')
+                {
+                    if(st.empty())
+                    {
+                        cout<<"No";
+                        O2AF_3NDK_YA_MAGDY;
+                    }else
+                    {
+
+                        if(st.top()=='[')
+                        {
+                            st.pop();
+                        }else
+                        {
+                            cout<<"No";
+                           O2AF_3NDK_YA_MAGDY;
+                        }
+                    }
+                }
+            }
+
+        }
+            if(st.empty())
+            {
+                cout<<"Yes";
+            }
+
+     }
+    O2AF_3NDK_YA_MAGDY
+}
