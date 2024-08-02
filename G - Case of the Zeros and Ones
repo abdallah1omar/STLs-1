@@ -1,0 +1,66 @@
+#include <bits/stdc++.h>
+#define ONE_PEICE_3MK ios_base::sync_with_stdio(0),cin.tie(0),cout.tie(0);
+#define el cout << '\n'
+#define ll long long
+#define ull unsigned long long
+#define yes cout << "YES"
+#define no cout << "NO"
+#define print cout <<
+#define O2AF_3NDK_YA_MAGDY return 0;
+#define test while(t--)
+using namespace std;
+ll ar[200001];
+ll ar2[500002];
+ll pre[200001];
+ll freq[500002];
+int main()
+{
+    ONE_PEICE_3MK
+    ll t=1;
+   // cin>>t;
+    test{
+        ll n;
+        cin>>n;
+        string a;
+        cin>>a;
+        stack<char>st;
+        for (ll i=0;i<a.size();i++)
+        {
+            if(a[i]=='0')//111111
+            {
+                if(!st.empty())
+                {
+                    if(st.top()=='1')
+                    {
+                        st.pop();
+                    }
+                    else
+                    {
+                        st.push(a[i]);
+                    }
+                }else
+                {
+                    st.push(a[i]);
+                }
+
+            }else
+            {
+                if(!st.empty())
+                {
+                    if(st.top()=='0')
+                    {
+                        st.pop();
+                    }else
+                    {
+                        st.push(a[i]);
+                    }
+                }else
+                {
+                    st.push(a[i]);
+                }
+            }
+        }
+        cout<<st.size();
+     }
+    O2AF_3NDK_YA_MAGDY
+}
