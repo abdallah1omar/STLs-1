@@ -1,0 +1,63 @@
+#include <bits/stdc++.h>
+#define ONE_PEICE_3MK ios_base::sync_with_stdio(0),cin.tie(0),cout.tie(0);
+#define el cout << '\n'
+#define ll long long
+#define ull unsigned long long
+#define yes cout << "YES"
+#define no cout << "NO"
+#define print cout <<
+#define O2AF_3NDK_YA_MAGDY return 0;
+#define test while(t--)
+#define loop1(n) for(ll i=1;i<=n;i++)
+#define loop0(n) for(ll i=0;i<n;i++)
+#define pq priority_queue
+using namespace std;
+//ll pre[200001];
+//ll freq[500002];
+int main()
+{
+    ONE_PEICE_3MK
+    ll t=1;
+     cin>>t;
+    test{
+       ll n;
+        cin>>n;
+        vector<ll>ar2(n);
+        vector<ll> ar(100);
+        vector<ll>rem(100);
+
+        ll sz=1;
+        loop0(n)
+        {
+            cin>>ar2[i];
+        }
+         sort(ar2.begin(),ar2.begin()+n);
+        ar[0]=ar2[0];
+        ll m=0;
+        for(ll i=1,j=1;i<n;i++)
+        {
+            if(ar2[i]!=ar[j-1])
+               {
+                   ar[j]=ar2[i];
+                    sz++;
+                   j++;
+               }else
+               {
+                   rem[m]=ar2[i];
+                   m++;
+               }
+
+        }
+       //  sort(rem.begin(),rem.begin()+m);
+        loop0(sz)
+        {
+            cout<<ar[i]<<' ';
+        }
+        loop0(m)
+        {
+            cout<<rem[i]<<' ';
+        }
+        el;
+     }
+    O2AF_3NDK_YA_MAGDY
+}
