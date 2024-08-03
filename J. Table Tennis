@@ -1,0 +1,71 @@
+#include <bits/stdc++.h>
+#define ONE_PEICE_3MK ios_base::sync_with_stdio(0),cin.tie(0),cout.tie(0);
+#define el cout << '\n'
+#define ll long long
+#define ull unsigned long long
+#define yes cout << "YES"
+#define no cout << "NO"
+#define print cout <<
+#define O2AF_3NDK_YA_MAGDY return 0;
+#define test while(t--)
+using namespace std;
+//ll ar2[500002];
+//ll pre[200001];
+//ll freq[500002];
+int main()
+{
+    ONE_PEICE_3MK
+    ll t=1;
+    //cin>>t;
+    test{
+        ll n;cin>>n;
+        ll k;cin>>k;
+        deque<short> ar(n);
+        long long con=0,ans=0,i=0;
+        short maxx=0;
+        for ( i=0;i<n;i++)
+        {
+            cin>>ar[i];
+            maxx=max(maxx,ar[i]);
+        }
+        i=0;
+            if(k>=n)
+            {
+                print maxx;
+                O2AF_3NDK_YA_MAGDY;
+            }
+        while (true)// 4 3 5 2 1
+        {
+            if(con==k)
+            {
+                break;
+            }
+            if(ar[i]>ar[i+1]&&i+1<ar.size())
+            {
+                if(i+1==ar.size()-1)
+                {
+                    cout<<ar[i];
+                    O2AF_3NDK_YA_MAGDY;
+                }
+                con++;
+                ans=ar[i];// 1 2 3 1
+                swap(ar[i],ar[i+1]);
+              //  ar.erase(ar.begin()+i+1,ar.begin()+i+2);// 4   3 2
+                ar.push_back(ar[i]);
+                i++;
+            }else
+            {
+                //ar.erase(ar.begin()+i,ar.begin()+i+1);
+                ar.push_back(ar[i]);
+                i++;
+                con=1;
+            }
+            if(con==k)
+            {
+                break;
+            }
+        }
+        cout<<ans;
+     }
+    O2AF_3NDK_YA_MAGDY
+}
