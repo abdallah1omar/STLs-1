@@ -1,0 +1,75 @@
+#include <bits/stdc++.h>
+#define NARUTO_3MK ios_base::sync_with_stdio(0),cin.tie(0),cout.tie(0);
+#define el cout << '\n'
+#define ll long long
+#define ull unsigned long long
+#define yes cout << "YES"
+#define no cout << "NO"
+#define print cout <<
+#define O2AF_3NDK_YA_MAGDY return 0;
+#define test while(t--)
+#define loop1(n) for(ll i=1;i<=n;i++)
+#define loop0(n) for(ll i=0;i<n;i++)
+#define pq priority_queue
+using namespace std;
+ll pre[1000001];
+ll ar[1000001];
+ll freq[1000001];
+int main()
+{
+    NARUTO_3MK
+    ll t=1;
+    //cin>>t;
+    test{
+      ll n,q;cin>>n>>q;
+       while (q--)
+       {
+           ll l,r,u;
+           cin>>l>>r>>u;
+           pre[l]+=u;
+           pre[r+1]+=-u;       // 2 0 -2
+           ar[r+1]+=-(r-l+1)*u;// 0 0 -2 -8
+           freq[r+1]+=1;// 0 0 1 2 2 2 2
+       }
+       loop1(n)
+       {
+           pre[i]+=pre[i-1];
+         //  cout<<pre[i]<<' ';
+       }
+        loop1(n)
+       {
+           ar[i]+=ar[i-1];
+           //cout<<ar[i]<<" ";
+       }
+        loop1(n)
+        {
+            pre[i]+=pre[i-1];
+        }
+        loop1(n)
+       {
+           pre[i]+=ar[i];
+           print pre[i]<<' ';
+       }
+        /*
+         *
+        for (ll i=1,o=1;i<=n;i++)
+        {
+            if(freq[i]>0)
+            {
+                pre[i]+=pre[i-1];
+                pre[i]-=ar[o];
+                o++;
+            }else
+            {
+                pre[i]+=pre[i-1];
+            }
+        }
+        loop1(n)
+        {
+            cout<<pre[i]<<' ';
+        }
+         */
+
+     }
+    O2AF_3NDK_YA_MAGDY
+}
