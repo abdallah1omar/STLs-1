@@ -1,0 +1,59 @@
+#include <bits/stdc++.h>
+#define NARUTO_3MK ios_base::sync_with_stdio(0),cin.tie(0),cout.tie(0);
+#define el cout << '\n'
+#define ll long long
+#define ull unsigned long long
+#define yes cout << "YES"
+#define no cout << "NO"
+#define print cout <<
+#define O2AF_3NDK_YA_MAGDY return 0;
+#define test while(TC--)
+#define loop1(n) for(ll i=1;i<=n;i++)
+#define loop0(n) for(ll i=0;i<n;i++)
+#define pq priority_queue
+using namespace std;
+//ll pre[200001];
+//ll ar[200001];
+//ll freq[500002];
+void JustA_GININ_TryToSolve()
+{
+    ll n;cin>>n;
+  //  vector<ll>ar(n+1);
+    pq<ll,vector<ll>,greater<ll>> p;
+    ll h=0,po;
+    loop0(n)
+    {
+        cin>>po;
+        if(h+po<0)
+        {
+           if(p.empty())
+           {
+               continue;
+           }
+            ll tp=p.top();
+            if(po>tp)
+            {
+                h-=tp;
+                h+=po;
+                p.pop();
+                p.push(po);
+            }
+        }else
+        {
+            h+=po;
+            p.push(po);
+        }
+    }
+    cout<<p.size();
+
+}
+int main()
+{
+    NARUTO_3MK
+    ll TC=1;
+   // cin>>TC;
+    test{
+        JustA_GININ_TryToSolve();
+    }
+    O2AF_3NDK_YA_MAGDY
+}
